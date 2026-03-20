@@ -1,7 +1,7 @@
 import {test} from '../../src/BasePage'
 
 
-test('PlaceOrder', async({checkoutPage,chooseCountryPage,homePage, testData})=>{
+test('PlaceOrder', async({checkoutPage,chooseCountryPage,homePage, testData,setupTearDown})=>{
 
     await homePage.GotoHomePage();
     await homePage.searchForItem(String(testData.ModuleTestData?.VegetableName));
