@@ -1,7 +1,8 @@
 import {test} from '../../src/BasePage'
 
+test.describe('E2E Tests',()=>{
 
-test('PlaceOrder', async({checkoutPage,chooseCountryPage,homePage, testData,setupTearDown})=>{
+    test('PlaceOrder',{tag:['@E2E', '@Smoke']}, async({checkoutPage,chooseCountryPage,homePage, testData,setupTearDown})=>{
 
     await homePage.GotoHomePage();
     await homePage.searchForItem(String(testData.ModuleTestData?.VegetableName));
@@ -14,4 +15,9 @@ test('PlaceOrder', async({checkoutPage,chooseCountryPage,homePage, testData,setu
     await homePage.CheckHomePageIsLoaded();
     console.log(`price of vegetable is ${String(testData.ModuleTestData?.Price)} `);
 
+    });
+
 });
+
+
+    
